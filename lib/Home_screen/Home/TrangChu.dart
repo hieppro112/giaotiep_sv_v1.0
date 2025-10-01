@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dang_bai_dialog.dart';
 
 class TrangChu extends StatefulWidget {
   const TrangChu({super.key});
@@ -57,7 +58,11 @@ class _TrangChuState extends State<TrangChu> {
                         const SizedBox(width: 10),
                         ElevatedButton(
                           onPressed: () {
-                            // TODO: xử lý đăng bài
+                            showDialog(
+                              barrierDismissible: false,
+                              context: context,
+                              builder: (context) => DangBaiDialog(),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.lightBlueAccent,
@@ -129,13 +134,48 @@ class _TrangChuState extends State<TrangChu> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Nhóm:",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        const Text(
+                          "Nhóm:",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Spacer(),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: const [
+                              Text(
+                                "Mở rộng",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              SizedBox(width: 6),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.black,
+                                size: 18,
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.lightGreenAccent,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 6,
+                            ),
+                            minimumSize: const Size(0, 32),
+                          ),
+                        ),
+                      ],
                     ),
+
                     const SizedBox(height: 12),
                     TextField(
                       decoration: InputDecoration(
