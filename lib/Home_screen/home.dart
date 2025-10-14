@@ -1,5 +1,6 @@
 import 'package:app_giao_tiep_sinh_vien_tdc/Home_screen/Home/TrangChu.dart';
 import 'package:flutter/material.dart';
+import 'package:app_giao_tiep_sinh_vien_tdc/Profile/profile.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,13 +15,13 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     const TrangChu(),
     Center(child: Text("Chat Page")),
-    Center(child: Text("Profile Page")),
+    const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_currentIndex], // tự load page theo index
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
