@@ -240,7 +240,9 @@ class _TrangChuState extends State<TrangChu> {
               children: [
                 const CircleAvatar(
                   radius: 18,
-                  backgroundImage: AssetImage("assets/avatar.png"),
+                  backgroundImage: NetworkImage(
+                    "https://i.pinimg.com/736x/d4/38/25/d43825dd483d634e59838d919c3cf393.jpg",
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Expanded(

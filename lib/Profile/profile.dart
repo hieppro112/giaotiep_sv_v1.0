@@ -1,5 +1,6 @@
 import 'package:app_giao_tiep_sinh_vien_tdc/Home_screen/Home/TrangChu.dart';
 import 'package:app_giao_tiep_sinh_vien_tdc/Profile/editProflie.dart';
+import 'package:app_giao_tiep_sinh_vien_tdc/Profile/personal_post.dart';
 import 'package:app_giao_tiep_sinh_vien_tdc/Profile/saveItemsProfile.dart';
 import 'package:flutter/material.dart';
 
@@ -89,13 +90,12 @@ class ProfileScreen extends StatelessWidget {
                 title: const Text("Bài viết"),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 20),
                 onTap: () {
-                  print("Đã bấm vào Bài viết!");
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => const SavedItemsScreen(),
-                  //   ),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PersonalPostScreen(),
+                    ),
+                  );
                 },
               ),
               ListTile(
